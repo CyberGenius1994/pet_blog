@@ -1,0 +1,19 @@
+<h2>Create new post</h2>
+<%= form_for :post, url: posts_path do |f| %>
+  <% if @post.errors.any? %>
+    <% @post.errors.full_messages.each do |msg| %>
+      <div class="alert alert_danger"><%= msg %></div>
+    <% end %>
+  <% end %>
+  <fieldset>
+    <label for="">Name</label>
+    <%= f.text_field :title %>
+  </fieldset>
+  <fieldset>
+    <label for="">Description</label>
+    <%= f.text_area :body %>
+  </fieldset>
+  <fieldset>
+    <%= f.submit %>
+  </fieldset>
+<% end %>

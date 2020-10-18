@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>MyWebapp</title>
+    <title>MyBlog</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -10,6 +10,25 @@
   </head>
 
   <body>
+    <header>
+      <div class="logo">
+        <%= link_to "PetBlog", home_path %>
+      </div>
+      <nav class="blog_navigation">
+          <ul class="blog_navigation_list">
+          <li class="blog_navigation_item">
+            <%= link_to "Home", home_path %>
+          </li>
+          <li class="blog_navigation_item">
+            <%= link_to "About", about_path %>
+          </li>
+          <li class="blog_navigation_item">
+            <%= link_to "Create post", new_post_path %>
+          </li>
+        </ul>
+      </nav>
+
+    </header>
     <%= yield %>
   </body>
 </html>
